@@ -1,0 +1,215 @@
+{% extends "ProjectWebApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="content">
+    <p>Servicio de Predicción de Energía Solar:
+        A partir de nuestros modelos de Inteligencia Artificial, 
+        pronósticos meteorológicos satelitales y generación real calculamos 
+        pronósticos de alta precisión para centrales fotovoltaicas.</p>
+
+    <p>
+        Servicio de Predicción de Energía Eólica
+        Utilizando variables como presión atmosférica, 
+        temperatura, velocidad y dirección del viento, generamos 
+        pronósticos automatizados para centrales eólicas.</p>
+
+    <p>Renewable Energy Resource Map:
+
+        A web-based tool where users can view areas with potential for renewable energy projects (e.g., wind, solar).
+        Use Django with GIS features (via Django-Leaflet or GeoDjango) to map locations with data like wind speeds, sunlight hours, etc.
+        Integrate a machine learning model to predict optimal locations for renewable energy installations based on geographical and environmental data.</p>
+
+    <p>Energy Consumption Tracker:
+
+        Build a web application where users can log their household or industrial energy consumption.
+        Use Django to manage the data entry, and display energy consumption trends over time.
+        Integrate basic data analysis to provide users with insights such as their average energy usage and suggestions for energy efficiency.</p>
+
+
+            <h1>Machine Learning Projects in Energy Systems</h1>
+        
+            <p>Below are detailed descriptions of each task, highlighting how to use machine learning models, data handling, and Django-based web interfaces.</p>
+        
+            <h2>1. Optimización de la Operación de Centrales de Energía</h2>
+            <p>
+                Power plants can adjust their production based on multiple factors such as demand, fuel prices, and weather conditions. The goal of this task is to create a model that helps optimize the operation of power plants by recommending settings for optimal efficiency.
+            </p>
+            <ul>
+                <li>
+                    <strong>ML Task:</strong> Implement a <strong>Reinforcement Learning (RL)</strong> model. RL agents can learn how to adjust plant parameters to maximize efficiency and minimize costs by simulating different plant states and adjusting accordingly. The RL model will be trained on historical operation data and environmental factors (e.g., weather, load).
+                </li>
+                <li>
+                    <strong>Web Interface:</strong> 
+                    <ul>
+                        <li>Use Django to build a dashboard where plant operators can visualize real-time data from the power plant (e.g., fuel consumption, energy output).</li>
+                        <li>The model will provide recommendations for adjusting output or fuel usage to minimize operational costs.</li>
+                        <li>Allow users to input variables such as forecasted demand and fuel price to simulate different scenarios.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Data Source:</strong> Historical plant data (output, fuel consumption, weather) from plant management systems or open energy datasets.
+                </li>
+            </ul>
+        
+            <h2>2. Predicción de la Demanda Energética</h2>
+            <p>
+                Energy providers need to predict future energy demand to ensure they can meet consumption needs efficiently. Machine learning models can use past consumption patterns, combined with external factors like weather, to forecast demand.
+            </p>
+            <ul>
+                <li>
+                    <strong>ML Task:</strong> Build a <strong>Time Series Forecasting</strong> model using algorithms like <strong>ARIMA</strong>, <strong>LSTM (Long Short-Term Memory)</strong>, or <strong>Prophet</strong>. These models are ideal for predicting sequential data such as energy consumption over time.
+                </li>
+                <li>
+                    <strong>Web Interface:</strong>
+                    <ul>
+                        <li>Allow users (e.g., energy grid operators) to upload historical consumption data in CSV format.</li>
+                        <li>Display the predicted energy demand for the next day, week, or month in graphs or tables.</li>
+                        <li>Enable users to modify external factors, such as weather or holiday periods, to see how they influence the demand forecast.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Data Source:</strong> Publicly available energy consumption datasets (e.g., UCI Energy Load Dataset) or data from smart meters.
+                </li>
+            </ul>
+        
+            <h2>3. Mantenimiento Predictivo de Equipos</h2>
+            <p>
+                Predictive maintenance helps reduce downtime and extend the life of critical infrastructure by predicting when equipment is likely to fail. Machine learning models analyze historical sensor data and detect patterns that precede failures.
+            </p>
+            <ul>
+                <li>
+                    <strong>ML Task:</strong> Build a classification model using <strong>Random Forest</strong> or <strong>Gradient Boosting</strong> to predict equipment failures. The model can classify equipment status as "normal" or "at risk of failure" based on sensor readings (e.g., temperature, vibration, pressure).
+                </li>
+                <li>
+                    <strong>Web Interface:</strong>
+                    <ul>
+                        <li>Set up an interface where maintenance engineers can view real-time sensor data from the equipment.</li>
+                        <li>The system will alert the users when the model detects that a piece of equipment is at high risk of failure.</li>
+                        <li>Include options for scheduling maintenance tasks based on model predictions, with a calendar for maintenance planning.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Data Source:</strong> Historical maintenance logs and sensor data from machines (e.g., from SCADA systems).
+                </li>
+            </ul>
+        
+            <h2>4. Integración de Energías Renovables en la Red</h2>
+            <p>
+                Managing the fluctuating supply of renewable energy sources like solar and wind is challenging. Machine learning can help predict renewable energy output and ensure that it is integrated into the energy grid without causing imbalances.
+            </p>
+            <ul>
+                <li>
+                    <strong>ML Task:</strong> Use a <strong>Regression Model</strong> (e.g., Linear Regression or Support Vector Regression) to predict the output of renewable energy sources based on weather data such as sunlight hours, wind speed, and cloud coverage.
+                </li>
+                <li>
+                    <strong>Web Interface:</strong>
+                    <ul>
+                        <li>Create a tool where grid operators can monitor renewable energy sources (e.g., solar farms, wind turbines).</li>
+                        <li>Allow the interface to display predicted energy output and real-time generation on the same graph for comparison.</li>
+                        <li>Provide alerts for when the renewable energy output is expected to be below or above the expected grid load.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Data Source:</strong> Weather data from APIs (e.g., OpenWeather) and historical energy production from renewable energy sites.
+                </li>
+            </ul>
+        
+            <h2>5. Optimización de la Distribución y Consumo de Energía</h2>
+            <p>
+                Energy distribution needs to be optimized to reduce losses and avoid overloading the grid. Machine learning models can analyze grid performance and predict peak consumption times, allowing for efficient load balancing.
+            </p>
+            <ul>
+                <li>
+                    <strong>ML Task:</strong> Develop an optimization algorithm (e.g., using <strong>Genetic Algorithms</strong> or <strong>Simulated Annealing</strong>) that suggests optimal energy distribution strategies, minimizing energy loss and peak load.
+                </li>
+                <li>
+                    <strong>Web Interface:</strong>
+                    <ul>
+                        <li>Design a web app where grid managers can input real-time grid data and receive recommendations on load balancing.</li>
+                        <li>Include a visual representation of the grid, highlighting areas of high load or potential inefficiencies.</li>
+                        <li>Provide tools for managers to simulate different load-balancing strategies and their impact on efficiency and energy loss.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Data Source:</strong> Smart grid data from energy management systems, which track energy flow across the grid.
+                </li>
+            </ul>
+        
+            <h2>Common Challenges in Energy Systems</h2>
+            <p>
+                Some common issues you will face in these applications include:
+            </p>
+            <ul>
+                <li><strong>Prediction of generation/demand:</strong> Accurately forecasting energy generation and consumption is key for maintaining grid stability and minimizing wastage.</li>
+                <li><strong>Big Data Management:</strong> Energy systems generate vast amounts of data from sensors, meters, and equipment that must be processed and analyzed efficiently.</li>
+                <li><strong>Anomaly Detection:</strong> Identifying unusual patterns in energy consumption or equipment behavior is essential for preventing failures or detecting fraud.</li>
+            </ul>
+
+
+        <h1>ML & Django Projects for Energy</h1>
+
+        <h2>Beginner Level</h2>
+        <ul>
+            <li>
+                <strong>Energy Consumption Prediction (Basic)</strong><br>
+                Description: Predict household or industrial energy consumption.<br>
+                Dataset: <a href="https://archive.ics.uci.edu/ml/datasets/individual+household+electric+power+consumption">UCI Household Electric Power Consumption</a><br>
+                ML Task: Linear regression or decision trees.
+            </li>
+            <li>
+                <strong>Energy Price Forecasting</strong><br>
+                Description: Forecast electricity prices using historical data.<br>
+                Dataset: <a href="https://www.kaggle.com/c/GEF2014-load-forecasting/data">GEFCom Energy Forecasting</a><br>
+                ML Task: Time series forecasting (ARIMA or LSTM).
+            </li>
+        </ul>
+    
+        <h2>Intermediate Level</h2>
+        <ul>
+            <li>
+                <strong>Energy Efficiency Predictor</strong><br>
+                Description: Predict energy efficiency based on building features.<br>
+                Dataset: <a href="https://archive.ics.uci.edu/ml/datasets/energy+efficiency">Energy Efficiency Dataset</a><br>
+                ML Task: Regression models (Random Forest or Gradient Boosting).
+            </li>
+            <li>
+                <strong>Solar Energy Output Estimator</strong><br>
+                Description: Estimate solar energy output based on location and weather.<br>
+                Dataset: <a href="https://www.nrel.gov/grid/solar-power-data.html">NREL Solar Data</a><br>
+                ML Task: Regression or neural networks.
+            </li>
+            <li>
+                <strong>Energy Load Classification for Buildings</strong><br>
+                Description: Classify buildings based on energy consumption patterns.<br>
+                Dataset: <a href="https://www.kaggle.com/claytonmiller/building-data-genome-project">Building Energy Dataset</a><br>
+                ML Task: Classification (SVM or k-NN).
+            </li>
+        </ul>
+    
+        <h2>Advanced Level</h2>
+        <ul>
+            <li>
+                <strong>Energy Demand Prediction for Smart Grids</strong><br>
+                Description: Predict energy demand using past consumption patterns.<br>
+                Dataset: <a href="https://www.kaggle.com/robikscube/hourly-energy-consumption">Electricity Load Forecasting</a><br>
+                ML Task: LSTM, GRU, or XGBoost.
+            </li>
+            <li>
+                <strong>Energy Fraud Detection System</strong><br>
+                Description: Detect unusual energy usage patterns indicating fraud.<br>
+                Dataset: <a href="https://www.kaggle.com/rohanrao/electricity-theft-detection">Electricity Theft Detection</a><br>
+                ML Task: Anomaly detection (Isolation Forest or Autoencoders).
+            </li>
+            <li>
+                <strong>Renewable Energy Production Optimizer</strong><br>
+                Description: Predict the optimal mix of renewable energy sources.<br>
+                Dataset: <a href="https://data.world/datasets/renewable-energy">Renewable Energy Datasets</a><br>
+                ML Task: Optimization and predictive analytics (Neural Networks or Ensemble Models).
+            </li>
+        </ul>
+</div>
+
+{% endblock %}
